@@ -1,0 +1,190 @@
+/* ── ROOT ── */
+.ld-root {
+  min-height: 100vh;
+  background: #0a0a14;
+  position: relative;
+  overflow-x: hidden;
+  font-family: inherit;
+  color: #f8fafc;
+}
+
+/* ── ANIMATED BACKGROUND BLOBS ── */
+.ld-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: ldFloat 10s ease-in-out infinite alternate;
+}
+.ld-blob-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #7c3aed, #4f46e5);
+  top: -150px; left: -200px;
+  animation-delay: 0s;
+}
+.ld-blob-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #06b6d4, #3b82f6);
+  bottom: -150px; right: -150px;
+  animation-delay: 3s;
+}
+
+@keyframes ldFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.05); }
+}
+
+/* ── NAV ── */
+.ld-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+.ld-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ld-nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.ld-nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.ld-nav-link:hover { color: #f8fafc; }
+
+.ld-btn {
+  padding: 10px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ld-btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.ld-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(124,58,237,0.5);
+  color: #fff;
+}
+.ld-btn-secondary {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e2e8f0;
+  backdrop-filter: blur(10px);
+}
+.ld-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ── HERO ── */
+.ld-hero {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  margin: 80px auto 100px;
+  text-align: center;
+  padding: 0 20px;
+}
+.ld-hero-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(139,92,246,0.15);
+  border: 1px solid rgba(139,92,246,0.3);
+  color: #c4b5fd;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.ld-hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  background: linear-gradient(to bottom right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+.ld-hero-subtitle {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+.ld-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ── FEATURES ── */
+.ld-features {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.ld-feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 36px 30px;
+  border-radius: 24px;
+  backdrop-filter: blur(24px) saturate(120%);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.ld-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+.ld-feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.ld-feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 12px 0;
+}
+.ld-feature-desc {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}

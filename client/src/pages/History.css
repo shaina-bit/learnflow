@@ -1,0 +1,202 @@
+.hist-root {
+  min-height: 100vh;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  padding: 40px 20px;
+}
+
+.hist-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.hist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.hist-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.hist-back-btn:hover { color: #f1f5f9; }
+
+.hist-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+.hist-title-accent {
+  background: linear-gradient(135deg, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hist-stats-brief {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 12px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.hist-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hist-stat-val { font-size: 1.5rem; font-weight: 800; color: #818cf8; }
+.hist-stat-lbl { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; }
+
+/* ── TIMELINE ── */
+.hist-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+.hist-timeline::before {
+  content: '';
+  position: absolute;
+  left: 140px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(129, 140, 248, 0.2) 0%, rgba(129, 140, 248, 0) 100%);
+}
+
+.hist-day-block {
+  display: flex;
+  gap: 40px;
+}
+
+.hist-date-sticky {
+  flex-shrink: 0;
+  width: 140px;
+  position: sticky;
+  top: 40px;
+  height: max-content;
+}
+.hist-date-text {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+.hist-date-count {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.hist-tasks-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.hist-task-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s, background 0.2s;
+}
+.hist-task-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.hist-task-cat-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.hist-task-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0 0 12px 0;
+}
+
+.hist-task-time {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* ── EMPTY STATE ── */
+.hist-empty {
+  text-align: center;
+  padding: 100px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.hist-empty-icon { font-size: 4rem; margin-bottom: 20px; }
+.hist-empty h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.hist-empty p { color: #64748b; margin-bottom: 30px; }
+.hist-cta {
+  display: inline-block;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* ── CATEGORY COLORS (Variables) ── */
+:root {
+  --cat-color-DSA: #a5b4fc;
+  --cat-color-AI-ML: #f9a8d4;
+  --cat-color-Web-Dev: #93c5fd;
+  --cat-color-General: #94a3b8;
+  --cat-color-Self-Care: #86efac;
+  --cat-color-Hobbies: #fdba74;
+}
+
+/* ── LOADING ── */
+.hist-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+}
+.hist-loading p { margin-top: 15px; color: #64748b; }
+
+@media (max-width: 768px) {
+  .hist-timeline::before { display: none; }
+  .hist-day-block { flex-direction: column; gap: 20px; }
+  .hist-date-sticky { width: 100%; position: relative; top: 0; }
+  .hist-date-content { 
+    padding: 8px 16px; 
+    background: rgba(129, 140, 248, 0.1); 
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,109 @@
+.about-root {
+  min-height: 100vh;
+  background: #0a0a14;
+  position: relative;
+  overflow-x: hidden;
+  font-family: inherit;
+  color: #f8fafc;
+  padding: 40px 20px;
+}
+
+/* ── ANIMATED BACKGROUND BLOBS ── */
+.about-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.2;
+  pointer-events: none;
+  animation: ldFloat 10s ease-in-out infinite alternate;
+}
+.about-blob-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #7c3aed, #4f46e5);
+  top: -150px; left: -200px;
+  animation-delay: 0s;
+}
+.about-blob-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #06b6d4, #3b82f6);
+  bottom: -150px; right: -150px;
+  animation-delay: 3s;
+}
+
+/* ── NAV ── */
+.about-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  position: relative;
+  z-index: 10;
+}
+.about-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.about-btn-back {
+  padding: 10px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e2e8f0;
+  backdrop-filter: blur(10px);
+}
+.about-btn-back:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ── CONTENT ── */
+.about-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 0 auto 100px;
+  text-align: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(24px) saturate(120%);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.about-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 24px;
+  background: linear-gradient(to bottom right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  line-height: 1.3;
+  padding-top: 10px;
+}
+.about-content p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+.about-content p:last-child {
+  margin-bottom: 0;
+}
